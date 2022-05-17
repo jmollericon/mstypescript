@@ -128,3 +128,36 @@ let subtractThreeNumbersTwo = (x, y, z = 100) => x - y - z;
 // Try calling the function with two and three arguments to test the result.
 subtractThreeNumbersTwo(10, 20); // returns -110 because 'z' has been assigned the value 100
 subtractThreeNumbersTwo(10, 20, 15); // returns -25
+let addNumbersFive = (x, y) => x + y;
+let subtractNumbers = (x, y) => x - y;
+console.log(addNumbersFive(1, 2));
+console.log(subtractNumbers(1, 2));
+let doCalculation = (operation) => {
+    if (operation === 'add') {
+        return addNumbersFive;
+    }
+    else {
+        return subtractNumbers;
+    }
+};
+console.log(doCalculation('add')(1, 2));
+let addNumbersFiveI = (x, y) => x + y;
+let subtractNumbersI = (x, y) => x - y;
+console.log(addNumbersFiveI(1, 2));
+console.log(subtractNumbersI(1, 2));
+let doCalculationI = (operation) => {
+    if (operation === 'add') {
+        return addNumbersFiveI;
+    }
+    else {
+        return subtractNumbersI;
+    }
+};
+console.log(doCalculationI('add')(1, 2));
+// Function type inference
+// When defining a function, the names of the function parameters do not need to match those in the function type. While you are required to name the parameters in the type signature in both places, the names are ignored when checking if two function types are compatible.
+// You can also leave off the parameter types and return type because TypeScript will infer these from the function type.
+// As far as TypeScript is concerned, these three statements are identical.
+let addNumbersSix = (x, y) => x + y;
+let addNumbersSeven = (number1, number2) => number1 + number2;
+let addNumbersEight = (num1, num2) => num1 + num2;

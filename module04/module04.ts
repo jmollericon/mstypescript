@@ -166,3 +166,53 @@ let subtractThreeNumbersTwo = (x: number, y: number, z = 100): number => x - y -
 // Try calling the function with two and three arguments to test the result.
 subtractThreeNumbersTwo(10, 20);       // returns -110 because 'z' has been assigned the value 100
 subtractThreeNumbersTwo(10, 20, 15);   // returns -25
+
+
+// Exercise - Define function types
+// ================================
+
+type calculator = (x: number, y: number) => number;
+
+let addNumbersFive: calculator = (x: number, y: number): number => x + y;
+let subtractNumbers: calculator = (x: number, y: number): number => x - y;
+
+console.log(addNumbersFive(1, 2));
+console.log(subtractNumbers(1, 2));
+
+let doCalculation = (operation: 'add' | 'subtract'): calculator => {
+  if (operation === 'add') {
+    return addNumbersFive;
+  } else {
+    return subtractNumbers;
+  }
+}
+
+console.log(doCalculation('add')(1, 2))
+
+interface Calculator {
+  (x: number, y: number): number;
+}
+
+let addNumbersFiveI: Calculator = (x: number, y: number): number => x + y;
+let subtractNumbersI: Calculator = (x: number, y: number): number => x - y;
+
+console.log(addNumbersFiveI(1, 2));
+console.log(subtractNumbersI(1, 2));
+
+let doCalculationI = (operation: 'add' | 'subtract'): Calculator => {
+  if (operation === 'add') {
+    return addNumbersFiveI;
+  } else {
+    return subtractNumbersI;
+  }
+}
+
+console.log(doCalculationI('add')(1, 2))
+
+// Function type inference
+// When defining a function, the names of the function parameters do not need to match those in the function type. While you are required to name the parameters in the type signature in both places, the names are ignored when checking if two function types are compatible.
+// You can also leave off the parameter types and return type because TypeScript will infer these from the function type.
+// As far as TypeScript is concerned, these three statements are identical.
+let addNumbersSix: Calculator = (x: number, y: number): number => x + y;
+let addNumbersSeven: Calculator = (number1: number, number2: number): number => number1 + number2;
+let addNumbersEight: Calculator = (num1, num2) => num1 + num2;
