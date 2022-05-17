@@ -18,3 +18,39 @@ let employee: EmployeeU3 = {
 }
 
 // employee.firstName = 10;  //* Error - Type 'number' is not assignable to type 'string'
+
+// Declare and instantiate and interface in TypeScript
+
+//  Property type	  Description	                                                          Example
+//  -------------   -----------                                                           -------
+//  Required	      All properties are required, unless otherwise specified.	            firstName: string;
+//  Optional	      Add a question mark (?) to the end of the property name. Use this
+//                  for properties that are not required. This prevents the type system   firstName?: string;
+//                  from raising an error if the property is omitted.
+//  Read only	      Add the readonly keyword in front of the property name. Use this
+//                  for properties that should only be modified when an object is         readonly firstName: string;
+//                  first created.
+
+// Declare an interface with members
+
+interface IceCream {
+  flavor: string;
+  scoops: number;
+}
+
+let iceCream: IceCream = {
+  flavor: 'vanilla',
+  scoops: 2
+}
+
+console.log(iceCream.flavor);
+
+function tooManyScoops(dessert: IceCream) {
+  if (dessert.scoops >= 4) {
+     return dessert.scoops + ' is too many scoops!';
+  } else {
+     return 'Your order will be ready soon!';
+  }
+}
+
+console.log(tooManyScoops({flavor: 'vanilla', scoops: 5}));
