@@ -22,3 +22,18 @@ function tooManyScoops(dessert) {
     }
 }
 console.log(tooManyScoops({ flavor: 'vanilla', scoops: 5 }));
+let myIceCream = {
+    flavor: 'vanilla',
+    scoops: 2,
+    sauce: 'caramel',
+    nuts: true
+};
+function tooManyScoopsSundae(dessert) {
+    if (dessert.scoops >= 4) {
+        return dessert.scoops + ' is too many scoops!';
+    }
+    else {
+        return 'Your order will be ready soon!';
+    }
+}
+console.log(tooManyScoopsSundae({ flavor: 'vanilla', scoops: 5, sauce: 'caramel' }));

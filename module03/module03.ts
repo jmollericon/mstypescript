@@ -36,6 +36,7 @@ let employee: EmployeeU3 = {
 interface IceCream {
   flavor: string;
   scoops: number;
+  instructions?: string;
 }
 
 let iceCream: IceCream = {
@@ -54,3 +55,30 @@ function tooManyScoops(dessert: IceCream) {
 }
 
 console.log(tooManyScoops({flavor: 'vanilla', scoops: 5}));
+
+// Exercise - Extend an interface in TypeScript
+
+interface Sundae extends IceCream {
+  sauce: 'chocolate' | 'caramel' | 'strawberry';
+  nuts?: boolean;
+  whippedCream?: boolean;
+  instructions?: string;
+}
+
+let myIceCream: Sundae = {
+  flavor: 'vanilla',
+  scoops: 2,
+  sauce: 'caramel',
+  nuts: true
+}
+
+function tooManyScoopsSundae(dessert: Sundae) {
+  if (dessert.scoops >= 4) {
+      return dessert.scoops + ' is too many scoops!';
+  } else {
+      return 'Your order will be ready soon!';
+  }
+}
+console.log(tooManyScoopsSundae({flavor: 'vanilla', scoops: 5, sauce: 'caramel'}));
+
+
