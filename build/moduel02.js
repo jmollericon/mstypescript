@@ -92,5 +92,17 @@ let diceRoll;
 diceRoll = 1; //* Valid
 diceRoll = 2; //* Valid
 diceRoll = 7; //* Invalid
-// 
+// Collection types in TypeScript
+// ==============================
+// Arrays
+// TypeScript, like JavaScript, allows you to work with arrays. Arrays can be written in one of two ways. In the first, you use the type of the elements followed by square brackets ([ ]) to denote an array of that element type:
+let list = [1, 2, 3];
+// The second way uses a generic Array type, using the syntax Array<type>
+let list2 = [1, 2, 3];
+// Tuples
+let person1 = ['Marcia', 35];
+// Try to add another item to the array. For example:
+let person2 = ['Marcia', 35, true];
+// Try switching the order of the items in the array. For example:
+let person3 = [35, 'Marcia'];
 // 
