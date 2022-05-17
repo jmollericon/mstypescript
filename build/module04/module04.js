@@ -103,3 +103,28 @@ function displayMessage({ text, sender }) {
     console.log(`Message from ${sender}: ${text}`);
 }
 displayMessage({ sender: 'Christopher', text: 'hello, world' });
+// Exercise - Fun with parameters
+// ==============================
+// Required parameters
+let addThreeNumbers = (x, y, z) => x + y + z;
+addThreeNumbers(10, 20); // TypeScript raises the error Expected 3 arguments but got 2. An argument for 'z' was not provided
+addThreeNumbers(10, 20, 30, 40); // TypeScript raises the error Expected 3 arguments but got 4.
+// Optional parameters
+let addThreeNumbersTwo = (x, y, z) => {
+    if ((z === undefined)) {
+        return x + y;
+    }
+    else {
+        return x + y + z;
+    }
+};
+addThreeNumbersTwo(10, 20);
+addThreeNumbersTwo(10, 20, 30);
+// Default parameters
+// Enter the following arrow function, which accepts three required parameters.
+let subtractThreeNumbers = (x, y, z) => x - y - z;
+// Assign a default value of 100 to the z parameter by replacing z: number with z = 100.
+let subtractThreeNumbersTwo = (x, y, z = 100) => x - y - z;
+// Try calling the function with two and three arguments to test the result.
+subtractThreeNumbersTwo(10, 20); // returns -110 because 'z' has been assigned the value 100
+subtractThreeNumbersTwo(10, 20, 15); // returns -25
