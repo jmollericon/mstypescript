@@ -23,3 +23,16 @@ let firstName: string = "Mateo";
 let sentence: string = `My name is ${firstName}.
   I am new to TypeScript.`;
 console.log(sentence);
+
+// The enum type
+
+// Creating an enum
+enum ContractStatus {
+  Permanent = 1,
+  Temp,
+  Apprentice
+}
+
+let employeeStatus: ContractStatus = ContractStatus.Temp;
+console.log(employeeStatus);
+console.log(ContractStatus[employeeStatus]);
