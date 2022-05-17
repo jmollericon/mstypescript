@@ -105,4 +105,3 @@ let person1 = ['Marcia', 35];
 let person2 = ['Marcia', 35, true];
 // Try switching the order of the items in the array. For example:
 let person3 = [35, 'Marcia'];
-// 
